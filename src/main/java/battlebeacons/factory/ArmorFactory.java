@@ -27,22 +27,29 @@ public final class ArmorFactory {
         var helmet = new ItemStack(Material.LEATHER_HELMET, 1);
         helmet.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 2);
         helmet.addEnchantment(Enchantment.BINDING_CURSE, 1);
+        LeatherArmorMeta meta = (LeatherArmorMeta) helmet.getItemMeta();
+        meta.setColor(color);
+        helmet.setItemMeta(meta);
         return helmet;
     }
 
     public ItemStack leggins() {
         var leggins = new ItemStack(Material.LEATHER_LEGGINGS, 1);
         leggins.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 2);
-        leggins.addEnchantment(Enchantment.THORNS, 2);
         leggins.addEnchantment(Enchantment.BINDING_CURSE, 1);
+        LeatherArmorMeta meta = (LeatherArmorMeta) leggins.getItemMeta();
+        meta.setColor(color);
+        leggins.setItemMeta(meta);
         return leggins;
     }
 
     public ItemStack boots() {
         var boots = new ItemStack(Material.IRON_BOOTS, 1);
         boots.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 2);
-        boots.addEnchantment(Enchantment.THORNS, 2);
         boots.addEnchantment(Enchantment.BINDING_CURSE, 1);
+        LeatherArmorMeta meta = (LeatherArmorMeta) boots.getItemMeta();
+        meta.setColor(color);
+        boots.setItemMeta(meta);
         return boots;
     }
 

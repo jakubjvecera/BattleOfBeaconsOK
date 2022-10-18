@@ -80,6 +80,6 @@ public final class Tym {
         inventory.setItemInOffHand(weapons.shield());
         inventory.addItem(weapons.bow());
         inventory.addItem(weapons.arrow());
-        inventory.addItem(weapons.axe());
+        inventory.addItem(weapons.pickaxe());
     }
 }

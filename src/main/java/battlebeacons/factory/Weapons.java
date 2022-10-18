@@ -27,9 +27,9 @@ public class Weapons {
         return sip;
     }
 
-    public ItemStack axe() {
-        var axe = new ItemStack(Material.IRON_AXE, 1);
-        return axe;
+    public ItemStack pickaxe() {
+        var pickaxe = new ItemStack(Material.IRON_PICKAXE, 1);
+        return pickaxe;
     }
 
 
