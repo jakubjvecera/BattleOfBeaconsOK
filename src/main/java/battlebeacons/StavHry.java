@@ -7,7 +7,7 @@ import battlebeacons.tymy.Skore;
 import battlebeacons.tymy.Tymy;
 
 
-public class   StavHry {
+public class StavHry {
 
     private final Tymy tymy;
     private final TeleportDoLoby teleportDoLoby;
