@@ -47,9 +47,6 @@ public final class ArmorFactory {
         var boots = new ItemStack(Material.IRON_BOOTS, 1);
         boots.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 2);
         boots.addEnchantment(Enchantment.BINDING_CURSE, 1);
-        LeatherArmorMeta meta = (LeatherArmorMeta) boots.getItemMeta();
-        meta.setColor(color);
-        boots.setItemMeta(meta);
         return boots;
     }
 
