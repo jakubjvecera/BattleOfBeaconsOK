@@ -32,9 +32,38 @@ public final class SmrtHrace implements Listener {
     public void smrtHrace(PlayerDeathEvent playerDeathEvent) {
         if (!stavHry.isGameRunning()) return;
         var player = playerDeathEvent.getEntity();
-        //vypadne z nej vlna
+
+        //vypadnou z nej suroviny
+        int netherite = 0;
+        int emerald = 0;
+        int gold = 0;
+        int iron = 0;
+
+
+        for (int i = 0; i <= 35; i++) {
+            ItemStack itemStack = player.getInventory().getItem(i);
+
+            if (itemStack.equals(new ItemStack(Material.NETHERITE_INGOT)))
+                netherite++;
+
+            if (itemStack.equals(new ItemStack(Material.EMERALD)))
+                emerald++;
+
+
+            if (itemStack.equals(new ItemStack(Material.IRON_INGOT)))
+                iron++;
+
+            if (itemStack.equals(new ItemStack(Material.GOLD_INGOT)))
+                gold++;
+        }
+
         playerDeathEvent.getDrops().clear();
-        playerDeathEvent.getDrops().add(new ItemStack(Material.BLACK_WOOL, 10));
+
+        playerDeathEvent.getDrops().add(new ItemStack(Material.NETHERITE_INGOT, netherite));
+        playerDeathEvent.getDrops().add(new ItemStack(Material.EMERALD, emerald));
+        playerDeathEvent.getDrops().add(new ItemStack(Material.GOLD_INGOT, gold));
+        playerDeathEvent.getDrops().add(new ItemStack(Material.IRON_INGOT, iron));
+
         {
             //spectator mod pokud uz neni beacon
             var tym = tymy.vratTym(player);

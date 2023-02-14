@@ -19,6 +19,9 @@ public class TeleportDoLoby {
             tym.getHraci().forEach(hrac -> {
                 var mistovLoby = lobby.nahodneMistoVLobby();
                 hrac.setGameMode(GameMode.ADVENTURE);
+                hrac.getInventory().clear();
+                hrac.setArrowsInBody(0);
+                hrac.getActivePotionEffects().clear();
                 hrac.teleport(mistovLoby);
             });
         });
