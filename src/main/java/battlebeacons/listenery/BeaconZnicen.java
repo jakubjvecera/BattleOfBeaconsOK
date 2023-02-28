@@ -32,3 +32,4 @@ public class BeaconZnicen implements Listener {
         }
     }
 }
+//je to stejny
