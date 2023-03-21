@@ -2,6 +2,8 @@ package battlebeacons;
 
 import battlebeacons.commands.KonecHry;
 import battlebeacons.commands.VytvorTeleportera;
+import battlebeacons.commands.trader.Trader;
+import battlebeacons.commands.trader.VeciNaProdej;
 import battlebeacons.listenery.*;
 import battlebeacons.lobby.Lobby;
 import battlebeacons.lobby.LobbyCreator;
@@ -26,6 +28,7 @@ public class Main extends JavaPlugin {
         SpravaBloku spravaBloku = new SpravaBloku();
         StavHry stavHry = new StavHry(tymy, teleportDoLoby, spravaBloku, teleportDoAreny, skore);
 
+
         //listeners
         getServer().getPluginManager().registerEvents(new PripojeniDoLobby(lobby), this);
         getServer().getPluginManager().registerEvents(new StartHry(stavHry), this);
@@ -42,6 +45,7 @@ public class Main extends JavaPlugin {
         //commandy
         getCommand("+vytvorTeleportera").setExecutor(new VytvorTeleportera());
         getCommand("+konec").setExecutor(new KonecHry(stavHry, tymy));
+        getCommand("+vytvorTradera").setExecutor(new Trader(new VeciNaProdej()));
     }
 
 }

@@ -70,7 +70,7 @@ TeamBattleLocation_3:
 BeaconLocation_3:
   ==: org.bukkit.Location
   world: world
-  x: 570
+  x: 431
   y: 104
   z: 500
   pitch: 0
@@ -88,7 +88,7 @@ TeamBattleLocation_4:
 BeaconLocation_4:
   ==: org.bukkit.Location
   world: world
-  x: 431
+  x: 570
   y: 104
   z: 500
   pitch: 0
