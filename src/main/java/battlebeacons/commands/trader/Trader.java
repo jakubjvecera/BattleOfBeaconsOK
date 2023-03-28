@@ -13,6 +13,8 @@ import org.bukkit.inventory.MerchantRecipe;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import javax.management.timer.Timer;
+
 public class Trader implements CommandExecutor {
     private final VeciNaProdej veciNaProdej;
 
@@ -47,10 +49,19 @@ public class Trader implements CommandExecutor {
         MerchantRecipe elytra = new MerchantRecipe(veciNaProdej.elytra(), 1);
         elytra.addIngredient(new ItemStack(Material.NETHERITE_INGOT, 3));
 
-        MerchantRecipe snowball = new MerchantRecipe(veciNaProdej.snowball(),1);
-        snowball.addIngredient(new ItemStack(Material.GOLD_INGOT,2));
+        MerchantRecipe snowball = new MerchantRecipe(veciNaProdej.snowball(), 1);
+        snowball.addIngredient(new ItemStack(Material.GOLD_INGOT, 2));
 
-        trader.setRecipes(Lists.newArrayList(enderPearl,wool, endstone,bucketOfPowederSnow, elytra, snowball));
+        MerchantRecipe lavaBucket = new MerchantRecipe(veciNaProdej.lavaBucket(), 1);
+        lavaBucket.addIngredient(new ItemStack(Material.GOLD_INGOT, 10));
+
+        MerchantRecipe chainmailLeggins = new MerchantRecipe(veciNaProdej.chainmailLeggins(), 1);
+        chainmailLeggins.addIngredient(new ItemStack(Material.IRON_INGOT, 30));
+
+        MerchantRecipe chainmailBoots = new MerchantRecipe(veciNaProdej.chainmailBoots(), 1);
+        chainmailBoots.addIngredient(new ItemStack(Material.IRON_INGOT, 30));
+
+        trader.setRecipes(Lists.newArrayList(enderPearl, wool, endstone, bucketOfPowederSnow, elytra, snowball, lavaBucket, chainmailLeggins, chainmailBoots));
 
         return true;
     }
