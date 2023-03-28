@@ -45,4 +45,12 @@ public class VeciNaProdej {
         var hainmailBoots = new ItemStack(Material.CHAINMAIL_BOOTS, 1);
         return hainmailBoots;
     }
+    public ItemStack ironLeggins() {
+        var ironLeggins = new ItemStack(Material.IRON_LEGGINGS, 1);
+        return ironLeggins;
+    }
+    public ItemStack ironlBoots() {
+        var ironBoots = new ItemStack(Material.IRON_BOOTS, 1);
+        return ironBoots;
+    }
 }

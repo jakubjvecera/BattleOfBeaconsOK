@@ -59,9 +59,15 @@ public class Trader implements CommandExecutor {
         chainmailLeggins.addIngredient(new ItemStack(Material.IRON_INGOT, 30));
 
         MerchantRecipe chainmailBoots = new MerchantRecipe(veciNaProdej.chainmailBoots(), 1);
-        chainmailBoots.addIngredient(new ItemStack(Material.IRON_INGOT, 30));
+        chainmailBoots.addIngredient(new ItemStack(Material.IRON_INGOT, 25));
 
-        trader.setRecipes(Lists.newArrayList(enderPearl, wool, endstone, bucketOfPowederSnow, elytra, snowball, lavaBucket, chainmailLeggins, chainmailBoots));
+        MerchantRecipe ironLeggins = new MerchantRecipe(veciNaProdej.ironLeggins(), 1);
+        ironLeggins.addIngredient(new ItemStack(Material.GOLD_INGOT, 10));
+
+        MerchantRecipe ironlBoots = new MerchantRecipe(veciNaProdej.ironlBoots(), 1);
+        ironlBoots.addIngredient(new ItemStack(Material.GOLD_INGOT, 7));
+
+        trader.setRecipes(Lists.newArrayList(enderPearl, wool, endstone, bucketOfPowederSnow, elytra, snowball, lavaBucket, chainmailLeggins, chainmailBoots, ironLeggins, ironlBoots));
 
         return true;
     }
