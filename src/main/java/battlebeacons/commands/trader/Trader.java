@@ -38,8 +38,19 @@ public class Trader implements CommandExecutor {
         MerchantRecipe wool = new MerchantRecipe(veciNaProdej.wool(), 1);
         wool.addIngredient(new ItemStack(Material.IRON_INGOT, 4));
 
+        MerchantRecipe endstone = new MerchantRecipe(veciNaProdej.endstone(), 1);
+        wool.addIngredient(new ItemStack(Material.IRON_INGOT, 4));
 
-        trader.setRecipes(Lists.newArrayList(enderPearl,wool));
+        MerchantRecipe bucketOfPowederSnow = new MerchantRecipe(veciNaProdej.bucketOfPowederSnow(), 1);
+        bucketOfPowederSnow.addIngredient(new ItemStack(Material.EMERALD, 3));
+
+        MerchantRecipe elytra = new MerchantRecipe(veciNaProdej.elytra(), 1);
+        elytra.addIngredient(new ItemStack(Material.NETHERITE_INGOT, 3));
+
+        MerchantRecipe snowball = new MerchantRecipe(veciNaProdej.snowball(),1);
+        snowball.addIngredient(new ItemStack(Material.GOLD_INGOT,2));
+
+        trader.setRecipes(Lists.newArrayList(enderPearl,wool, endstone,bucketOfPowederSnow, elytra, snowball));
 
         return true;
     }
