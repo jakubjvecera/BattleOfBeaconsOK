@@ -15,6 +15,7 @@ public class SpawnGeneratorCommand implements CommandExecutor {
 
         Player player = (Player) sender;
         Location location = player.getLocation();
+        //chyba bude pravdepodobne tady
         IronGenerator ironGenerator = new IronGenerator(location);
 
         ironGenerator.spawnIronGenerator(location.getWorld(), location);

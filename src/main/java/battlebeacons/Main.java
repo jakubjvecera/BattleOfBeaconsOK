@@ -29,6 +29,8 @@ public class Main extends JavaPlugin {
         SpravaBloku spravaBloku = new SpravaBloku();
         StavHry stavHry = new StavHry(tymy, teleportDoLoby, spravaBloku, teleportDoAreny, skore);
 
+        //udelat seznam lokaci, ktere se nactou z configu a potom vsude vyspawnuji iron generatory
+
 
         //listeners
         getServer().getPluginManager().registerEvents(new PripojeniDoLobby(lobby), this);
