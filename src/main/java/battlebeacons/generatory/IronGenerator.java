@@ -13,7 +13,12 @@ import java.util.Timer;
 public class IronGenerator {
     ArmorStand armorStand;
     String name = ChatColor.WHITE + "Iron Generator";
+    Location location;
+    Timer timer = new Timer();
 
+    public IronGenerator(Location location) {
+        this.location = location;
+    }
 
     public void spawnIronGenerator(World world, Location location){
         armorStand = (ArmorStand) world.spawnEntity(location, EntityType.ARMOR_STAND);
@@ -22,10 +27,15 @@ public class IronGenerator {
         armorStand.setCustomName(name);
         armorStand.setCustomNameVisible(true);
         armorStand.setInvisible(true);
+        startTimer();
     }
 
-    /*public void startTimer(){
-        Timer timer = new Timer();
-        timer.schedule(new GeneratorTimer(new ItemStack(Material.IRON_INGOT),2, new Location()),1000);
-    }*/
+    public void startTimer(){
+        ItemStack iron = new ItemStack(Material.IRON_INGOT);
+        timer.schedule(new GeneratorTimer(iron, 2, location, armorStand, name), 1000);
+    }
+
+    public void stopTimer(){
+        timer.cancel();
+    }
 }

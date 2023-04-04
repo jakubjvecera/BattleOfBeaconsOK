@@ -34,6 +34,7 @@ public class StavHry {
     public void startGame() {
         teleport.teleportPriStartuHry();
         skore.inicializace();
+
         this.gameRunning = true;
     }
 
