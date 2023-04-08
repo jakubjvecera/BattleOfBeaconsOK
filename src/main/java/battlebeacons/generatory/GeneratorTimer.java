@@ -1,41 +1,44 @@
 package battlebeacons.generatory;
 
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
-import org.bukkit.entity.ArmorStand;
+import org.bukkit.entity.Entity;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.TimerTask;
+public final class GeneratorTimer implements Runnable {
+    private final Material material;
+    private final int cas;
+    private final Location location;
+    private final World world;
+    private final Entity nameableEntity;
+    private final String jmeno;
 
-public class GeneratorTimer extends TimerTask implements Runnable{
-    ItemStack itemStack;
-    int cas;
-    Location location;
-    World world;
-    int casPuvodni = cas;
-    ArmorStand armorStand;
-    String jmeno;
+    //non - final variables
+    private int odpocet;
 
-    public GeneratorTimer(ItemStack itemStack, int cas, Location location, ArmorStand armorStand, String jmeno) {
-        this.itemStack = itemStack;
-        this.cas = cas;
+    public GeneratorTimer(Material material, int cas, Location location, Entity nameableEntity, String jmeno) {
+        this.material = material;
         this.location = location;
         this.world = location.getWorld();
-        this.armorStand = armorStand;
+        this.nameableEntity = nameableEntity;
         this.jmeno = jmeno;
+        this.cas = cas;
+        this.odpocet = cas;
     }
 
 
     @Override
     public void run() {
-        if (cas == 0){
-            world.dropItem(location, itemStack);
-            cas = casPuvodni;
-        }else {
-            armorStand.setCustomName(jmeno + " " + cas);
-            armorStand.setCustomNameVisible(true);
+
+        if (odpocet < 0) {
+            world.dropItem(location, new ItemStack(material, 1));
+            odpocet = cas;
+        } else {
+            nameableEntity.setCustomName(jmeno + " " + odpocet);
+            nameableEntity.setCustomNameVisible(true);
+            odpocet--;
         }
-        cas--;
     }
 }
 //zelezo 2, zlato 6, emerald 50, netherite 90

@@ -1,41 +1,35 @@
 package battlebeacons.generatory;
 
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.EntityType;
-import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.Plugin;
 
-import java.util.Timer;
+public final class IronGenerator {
+    private static final String NAME = ChatColor.WHITE + "Iron Generator";
+    private final Plugin plugin;
 
-public class IronGenerator {
-    ArmorStand armorStand;
-    String name = ChatColor.WHITE + "Iron Generator";
-    Location location;
-    Timer timer = new Timer();
+    //non final variables
+    private int taskId = 0;
 
-    public IronGenerator(Location location) {
-        this.location = location;
+    public IronGenerator(Plugin plugin) {
+        this.plugin = plugin;
     }
 
-    public void spawnIronGenerator(World world, Location location){
-        armorStand = (ArmorStand) world.spawnEntity(location, EntityType.ARMOR_STAND);
+    public void spawnIronGenerator(World world, Location location) {
+        ArmorStand armorStand = (ArmorStand) world.spawnEntity(location, EntityType.ARMOR_STAND);
         armorStand.setGlowing(true);
         armorStand.setInvulnerable(true);
-        armorStand.setCustomName(name);
+        armorStand.setCustomName(NAME);
         armorStand.setCustomNameVisible(true);
         armorStand.setInvisible(true);
-        startTimer();
+        if (taskId != 0) stopTimer();
+        taskId = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin,
+                new GeneratorTimer(Material.IRON_INGOT, 3, location, armorStand, NAME),
+                0, 20); //20 ticks is one second in spigot
     }
 
-    public void startTimer(){
-        ItemStack iron = new ItemStack(Material.IRON_INGOT);
-        timer.schedule(new GeneratorTimer(iron, 2, location, armorStand, name), 1000);
-    }
-
-    public void stopTimer(){
-        timer.cancel();
+    public void stopTimer() {
+        Bukkit.getScheduler().cancelTask(taskId);
     }
 }
