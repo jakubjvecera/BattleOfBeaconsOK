@@ -1,8 +1,9 @@
 package battlebeacons;
 
 import battlebeacons.commands.KonecHry;
-import battlebeacons.commands.SpawnGeneratorCommand;
+import battlebeacons.commands.trader.GoldGeneratorCommand;
 import battlebeacons.commands.VytvorTeleportera;
+import battlebeacons.commands.trader.IronGeneratorCommand;
 import battlebeacons.commands.trader.Trader;
 import battlebeacons.commands.trader.VeciNaProdej;
 import battlebeacons.listenery.*;
@@ -49,6 +50,7 @@ public class Main extends JavaPlugin {
         getCommand("+vytvorTeleportera").setExecutor(new VytvorTeleportera());
         getCommand("+konec").setExecutor(new KonecHry(stavHry, tymy));
         getCommand("+vytvorTradera").setExecutor(new Trader(new VeciNaProdej()));
-        getCommand("+vytvorIronGenerator").setExecutor(new SpawnGeneratorCommand(this));
+        getCommand("+vytvorIronGenerator").setExecutor(new IronGeneratorCommand(this));
+        getCommand("+vytvorGoldGenerator").setExecutor(new GoldGeneratorCommand(this));
     }
 }

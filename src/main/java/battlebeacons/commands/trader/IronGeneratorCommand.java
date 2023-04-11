@@ -1,4 +1,4 @@
-package battlebeacons.commands;
+package battlebeacons.commands.trader;
 
 import battlebeacons.generatory.IronGenerator;
 import org.bukkit.Location;
@@ -8,11 +8,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
-public class SpawnGeneratorCommand implements CommandExecutor {
+public class IronGeneratorCommand implements CommandExecutor {
 
     private final Plugin plugin;
 
-    public SpawnGeneratorCommand(Plugin plugin) {
+    public IronGeneratorCommand(Plugin plugin) {
         this.plugin = plugin;
     }
 
@@ -22,7 +22,7 @@ public class SpawnGeneratorCommand implements CommandExecutor {
 
         Player player = (Player) sender;
         Location location = player.getLocation();
-        //chyba bude pravdepodobne tady
+
         IronGenerator ironGenerator = new IronGenerator(plugin);
 
         ironGenerator.spawnIronGenerator(location.getWorld(), location);
