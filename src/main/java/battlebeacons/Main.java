@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main extends JavaPlugin {
-    List<Location> ironGenerators = new ArrayList<>();
+    List<Location> ironGeneratorsLocation = new ArrayList<>();
     //List<Location> goldGenerators = new ArrayList<>();
 
     @Override
@@ -41,10 +41,10 @@ public class Main extends JavaPlugin {
         Location ironGenerator2 = getConfig().getLocation("ironGenerator2Location");
         Location ironGenerator3 = getConfig().getLocation("ironGenerator3Location");
         Location ironGenerator4 = getConfig().getLocation("ironGenerator4Location");
-        ironGenerators.add(ironGenerator1);
-        ironGenerators.add(ironGenerator2);
-        ironGenerators.add(ironGenerator3);
-        ironGenerators.add(ironGenerator4);
+        ironGeneratorsLocation.add(ironGenerator1);
+        ironGeneratorsLocation.add(ironGenerator2);
+        ironGeneratorsLocation.add(ironGenerator3);
+        ironGeneratorsLocation.add(ironGenerator4);
 
 
         /*Location goldGenerator1 = getConfig().getLocation("goldGenerator1Location");

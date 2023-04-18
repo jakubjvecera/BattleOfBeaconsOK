@@ -7,7 +7,6 @@ import battlebeacons.teleporter.TeleportDoLoby;
 import battlebeacons.tymy.Skore;
 import battlebeacons.tymy.Tymy;
 import org.bukkit.plugin.Plugin;
-import org.checkerframework.checker.units.qual.A;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +46,7 @@ public class StavHry {
         skore.inicializace();
 
         this.gameRunning = true;
-        main.ironGenerators.forEach(location -> ironGenerators.add(new IronGenerator(plugin).spawnIronGenerator(main.getServer().getWorlds().get(0), location)));
+        main.ironGeneratorsLocation.forEach(ironGenerator -> ironGenerators.add(new IronGenerator(plugin).spawnIronGenerator(main.getServer().getWorlds().get(0), ironGenerator)));
     }
 
     public void stopGame() {
