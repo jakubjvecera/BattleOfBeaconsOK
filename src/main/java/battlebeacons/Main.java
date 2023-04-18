@@ -21,7 +21,7 @@ import java.util.List;
 
 public class Main extends JavaPlugin {
     List<Location> ironGenerators = new ArrayList<>();
-    List<Location> goldGenerators = new ArrayList<>();
+    //List<Location> goldGenerators = new ArrayList<>();
 
     @Override
     public void onEnable() {
@@ -47,14 +47,14 @@ public class Main extends JavaPlugin {
         ironGenerators.add(ironGenerator4);
 
 
-        Location goldGenerator1 = getConfig().getLocation("goldGenerator1Location");
+        /*Location goldGenerator1 = getConfig().getLocation("goldGenerator1Location");
         Location goldGenerator2 = getConfig().getLocation("goldGenerator2Location");
         Location goldGenerator3 = getConfig().getLocation("goldGenerator3Location");
         Location goldGenerator4 = getConfig().getLocation("goldGenerator4Location");
         goldGenerators.add(goldGenerator1);
         goldGenerators.add(goldGenerator2);
         goldGenerators.add(goldGenerator3);
-        goldGenerators.add(goldGenerator4);
+        goldGenerators.add(goldGenerator4);*/
 
 
         //listeners
