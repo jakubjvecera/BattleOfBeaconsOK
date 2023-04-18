@@ -1,6 +1,6 @@
-package battlebeacons.commands.trader;
+package battlebeacons.commands;
 
-import battlebeacons.generatory.IronGenerator;
+import battlebeacons.generatory.GoldGenerator;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -8,11 +8,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
-public class IronGeneratorCommand implements CommandExecutor {
+public class GoldGeneratorCommand implements CommandExecutor {
 
     private final Plugin plugin;
 
-    public IronGeneratorCommand(Plugin plugin) {
+    public GoldGeneratorCommand(Plugin plugin) {
         this.plugin = plugin;
     }
 
@@ -23,9 +23,9 @@ public class IronGeneratorCommand implements CommandExecutor {
         Player player = (Player) sender;
         Location location = player.getLocation();
 
-        IronGenerator ironGenerator = new IronGenerator(plugin);
+        GoldGenerator goldGenerator = new GoldGenerator(plugin);
 
-        ironGenerator.spawnIronGenerator(location.getWorld(), location);
+        goldGenerator.spawnGoldGenerator(location.getWorld(), location);
         return true;
     }
 }
