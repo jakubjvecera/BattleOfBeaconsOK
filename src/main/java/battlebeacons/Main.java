@@ -50,7 +50,7 @@ public class Main extends JavaPlugin {
         getCommand("+vytvorTeleportera").setExecutor(new VytvorTeleportera());
         getCommand("+konec").setExecutor(new KonecHry(stavHry, tymy));
         getCommand("+vytvorTradera").setExecutor(new Trader(new VeciNaProdej()));
-        getCommand("+vytvorIronGenerator").setExecutor(new IronGeneratorCommand(generatory));
-        getCommand("+vytvorGoldGenerator").setExecutor(new GoldGeneratorCommand(generatory));
+//        getCommand("+vytvorIronGenerator").setExecutor(new IronGeneratorCommand(generatory));
+//        getCommand("+vytvorGoldGenerator").setExecutor(new GoldGeneratorCommand(generatory));
     }
 }

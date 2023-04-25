@@ -95,13 +95,13 @@ BeaconLocation_4:
   yaw: 0
 
 ironGenerator1Location:
-    ==: org.bukkit.Location
-    world: world
-    x: 503
-    y: 100
-    z: 574
-    pitch: 0
-    yaw: 0
+  ==: org.bukkit.Location
+  world: world
+  x: 503
+  y: 100
+  z: 574
+  pitch: 0
+  yaw: 0
 
 ironGenerator2Location:
   ==: org.bukkit.Location
@@ -127,5 +127,41 @@ ironGenerator4Location:
   x: 426
   y: 100
   z: 503
+  pitch: 0
+  yaw: 0
+
+goldGenerator1Location:
+  ==: org.bukkit.Location
+  world: world
+  x: 497
+  y: 100
+  z: 574
+  pitch: 0
+  yaw: 0
+
+goldGenerator2Location:
+  ==: org.bukkit.Location
+  world: world
+  x: 503
+  y: 100
+  z: 426
+  pitch: 0
+  yaw: 0
+
+goldGenerator3Location:
+  ==: org.bukkit.Location
+  world: world
+  x: 575
+  y: 100
+  z: 503
+  pitch: 0
+  yaw: 0
+
+goldGenerator4Location:
+  ==: org.bukkit.Location
+  world: world
+  x: 426
+  y: 100
+  z: 497
   pitch: 0
   yaw: 0

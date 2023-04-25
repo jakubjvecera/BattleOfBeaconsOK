@@ -6,7 +6,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 
 public class GoldGeneratorCommand implements CommandExecutor {
 
@@ -22,7 +21,7 @@ public class GoldGeneratorCommand implements CommandExecutor {
 
         Player player = (Player) sender;
         Location location = player.getLocation();
-        generatory.createGoldenGenerator(location);
+        generatory.createGoldGenerator(location);
         return true;
     }
 }

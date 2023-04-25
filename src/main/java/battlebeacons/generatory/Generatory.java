@@ -30,9 +30,13 @@ public final class Generatory {
         add(createIronGenerator(config.getLocation("ironGenerator2Location")));
         add(createIronGenerator(config.getLocation("ironGenerator3Location")));
         add(createIronGenerator(config.getLocation("ironGenerator4Location")));
+        add(createGoldGenerator(config.getLocation("goldGenerator1Location")));
+        add(createGoldGenerator(config.getLocation("goldGenerator2Location")));
+        add(createGoldGenerator(config.getLocation("goldGenerator3Location")));
+        add(createGoldGenerator(config.getLocation("goldGenerator4Location")));
     }
 
-    public Generator createGoldenGenerator(Location location)
+    public Generator createGoldGenerator(Location location)
     {
         Generator generator = new Generator("GOLD GENERATOR", plugin, Material.GOLD_INGOT, location);
         generator.spawn();
