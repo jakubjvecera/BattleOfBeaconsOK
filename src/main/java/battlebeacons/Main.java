@@ -1,7 +1,5 @@
 package battlebeacons;
 
-import battlebeacons.commands.GoldGeneratorCommand;
-import battlebeacons.commands.IronGeneratorCommand;
 import battlebeacons.commands.KonecHry;
 import battlebeacons.commands.VytvorTeleportera;
 import battlebeacons.commands.trader.Trader;
@@ -31,7 +29,7 @@ public class Main extends JavaPlugin {
         Skore skore = new Skore(tymy);
         SpravaBloku spravaBloku = new SpravaBloku();
         Generatory generatory = new Generatory(this);
-        StavHry stavHry = new StavHry(tymy, teleportDoLoby, spravaBloku, teleportDoAreny, skore, generatory);
+        StavHry stavHry = new StavHry(tymy, teleportDoLoby, spravaBloku, teleportDoAreny, skore, generatory, this);
 
         //listeners
         getServer().getPluginManager().registerEvents(new PripojeniDoLobby(lobby), this);

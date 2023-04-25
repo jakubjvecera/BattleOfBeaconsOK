@@ -16,16 +16,18 @@ public class StavHry {
     private final TeleportDoAreny teleport;
     private final Skore skore;
     private final Generatory generatory;
+    private final Main main;
 
     private boolean gameRunning;
 
-    public StavHry(Tymy tymy, TeleportDoLoby teleportDoLoby, SpravaBloku spravaBloku, TeleportDoAreny teleport, Skore skore, Generatory generatory) {
+    public StavHry(Tymy tymy, TeleportDoLoby teleportDoLoby, SpravaBloku spravaBloku, TeleportDoAreny teleport, Skore skore, Generatory generatory, Main main) {
         this.tymy = tymy;
         this.teleportDoLoby = teleportDoLoby;
         this.spravaBloku = spravaBloku;
         this.teleport = teleport;
         this.skore = skore;
         this.generatory = generatory;
+        this.main = main;
         this.gameRunning = false;
     }
 
@@ -47,5 +49,6 @@ public class StavHry {
         spravaBloku.znicPolozeneBloky();
         spravaBloku.znicOdhozeneVeci();
         generatory.destroyAll();
+        main.getServer().getOnlinePlayers().forEach(player -> player.chat(player.isOp() ? "/kill @e[type=minecraft:armor_stand]" : ""));
     }
 }
