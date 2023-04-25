@@ -46,7 +46,7 @@ class Generator {
     }
 
     public void destroy(){
-        armorStand.remove();
         stopTimer();
+        armorStand.remove();
     }
 }

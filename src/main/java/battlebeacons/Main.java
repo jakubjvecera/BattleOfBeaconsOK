@@ -21,6 +21,7 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         this.saveDefaultConfig();
+
         //servicy
         LobbyCreator lobbyCreator = new LobbyCreator(this);
         Lobby lobby = lobbyCreator.createLobby();
@@ -31,6 +32,7 @@ public class Main extends JavaPlugin {
         SpravaBloku spravaBloku = new SpravaBloku();
         Generatory generatory = new Generatory(this);
         StavHry stavHry = new StavHry(tymy, teleportDoLoby, spravaBloku, teleportDoAreny, skore, generatory);
+
         //listeners
         getServer().getPluginManager().registerEvents(new PripojeniDoLobby(lobby), this);
         getServer().getPluginManager().registerEvents(new StartHry(stavHry), this);
@@ -51,5 +53,4 @@ public class Main extends JavaPlugin {
         getCommand("+vytvorIronGenerator").setExecutor(new IronGeneratorCommand(generatory));
         getCommand("+vytvorGoldGenerator").setExecutor(new GoldGeneratorCommand(generatory));
     }
-
 }
