@@ -12,16 +12,17 @@ class Generator {
     private final Material material;
     private final Location location;
     private ArmorStand armorStand;
+    private int cas;
 
     //non final variables
     private int taskId = 0;
 
-    public Generator(String name, Plugin plugin, Material material, Location location) {
+    public Generator(String name, Plugin plugin, Material material, Location location, int cas) {
         this.name = name;
         this.plugin = plugin;
         this.material = material;
         this.location = location;
-
+        this.cas = cas;
     }
 
     public void spawn() {
@@ -37,7 +38,7 @@ class Generator {
     public void startTimer(){
         if (taskId != 0) throw new RuntimeException("Timer pro generator jiz bezi");
         taskId = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin,
-                new GeneratorTimer(material, 3, armorStand.getLocation(), armorStand, name),
+                new GeneratorTimer(material, cas, armorStand.getLocation(), armorStand, name),
                 0, 20); //20 ticks is one second in spigot
     }
 

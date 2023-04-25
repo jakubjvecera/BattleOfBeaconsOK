@@ -38,7 +38,7 @@ public final class Generatory {
 
     public Generator createGoldGenerator(Location location)
     {
-        Generator generator = new Generator("GOLD GENERATOR", plugin, Material.GOLD_INGOT, location);
+        Generator generator = new Generator("GOLD GENERATOR", plugin, Material.GOLD_INGOT, location, 6);
         generator.spawn();
         add(generator);
         return generator;
@@ -46,7 +46,7 @@ public final class Generatory {
 
     public Generator createIronGenerator(Location location)
     {
-        Generator generator = new Generator("IRON GENERATOR", plugin, Material.IRON_INGOT, location);
+        Generator generator = new Generator("IRON GENERATOR", plugin, Material.IRON_INGOT, location, 3);
         generator.spawn();
         add(generator);
         return generator;
