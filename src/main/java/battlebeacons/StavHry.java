@@ -50,5 +50,6 @@ public class StavHry {
         spravaBloku.znicOdhozeneVeci();
         generatory.destroyAll();
         main.getServer().getOnlinePlayers().forEach(player -> player.chat(player.isOp() ? "/kill @e[type=minecraft:armor_stand]" : ""));
+        main.getServer().getOnlinePlayers().forEach(player -> player.chat(player.isOp() ? "/kill @e[type=minecraft:item]" : ""));
     }
 }
