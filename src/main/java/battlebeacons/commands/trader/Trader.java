@@ -34,40 +34,41 @@ public class Trader implements CommandExecutor {
         trader.setCustomName(JMENO_OBCHODNIKA);
         trader.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 1000000000, 999999999, true));
 
-        MerchantRecipe enderPearl = new MerchantRecipe(veciNaProdej.enderpearl(), 1);
+        MerchantRecipe enderPearl = new MerchantRecipe(veciNaProdej.enderpearl(), 999);
         enderPearl.addIngredient(new ItemStack(Material.EMERALD, 3));
 
-        MerchantRecipe wool = new MerchantRecipe(veciNaProdej.wool(), 1);
+        MerchantRecipe wool = new MerchantRecipe(veciNaProdej.wool(), 999);
         wool.addIngredient(new ItemStack(Material.IRON_INGOT, 4));
 
-        MerchantRecipe endstone = new MerchantRecipe(veciNaProdej.endstone(), 1);
-        wool.addIngredient(new ItemStack(Material.IRON_INGOT, 4));
+        MerchantRecipe endstone = new MerchantRecipe(veciNaProdej.endstone(), 999);
+        endstone.addIngredient(new ItemStack(Material.IRON_INGOT, 4));
 
-        MerchantRecipe bucketOfPowederSnow = new MerchantRecipe(veciNaProdej.bucketOfPowederSnow(), 1);
+        MerchantRecipe bucketOfPowederSnow = new MerchantRecipe(veciNaProdej.bucketOfPowederSnow(), 999);
         bucketOfPowederSnow.addIngredient(new ItemStack(Material.EMERALD, 3));
 
-        MerchantRecipe elytra = new MerchantRecipe(veciNaProdej.elytra(), 1);
+        MerchantRecipe elytra = new MerchantRecipe(veciNaProdej.elytra(), 999);
         elytra.addIngredient(new ItemStack(Material.NETHERITE_INGOT, 3));
 
-        MerchantRecipe snowball = new MerchantRecipe(veciNaProdej.snowball(), 1);
+        MerchantRecipe snowball = new MerchantRecipe(veciNaProdej.snowball(), 999);
         snowball.addIngredient(new ItemStack(Material.GOLD_INGOT, 2));
 
-        MerchantRecipe lavaBucket = new MerchantRecipe(veciNaProdej.lavaBucket(), 1);
+        MerchantRecipe lavaBucket = new MerchantRecipe(veciNaProdej.lavaBucket(), 999);
         lavaBucket.addIngredient(new ItemStack(Material.GOLD_INGOT, 10));
 
-        MerchantRecipe chainmailLeggins = new MerchantRecipe(veciNaProdej.chainmailLeggins(), 1);
+        MerchantRecipe chainmailLeggins = new MerchantRecipe(veciNaProdej.chainmailLeggins(), 999);
         chainmailLeggins.addIngredient(new ItemStack(Material.IRON_INGOT, 30));
 
-        MerchantRecipe chainmailBoots = new MerchantRecipe(veciNaProdej.chainmailBoots(), 1);
+        MerchantRecipe chainmailBoots = new MerchantRecipe(veciNaProdej.chainmailBoots(), 999);
         chainmailBoots.addIngredient(new ItemStack(Material.IRON_INGOT, 25));
 
-        MerchantRecipe ironLeggins = new MerchantRecipe(veciNaProdej.ironLeggins(), 1);
+        MerchantRecipe ironLeggins = new MerchantRecipe(veciNaProdej.ironLeggins(), 999);
         ironLeggins.addIngredient(new ItemStack(Material.GOLD_INGOT, 10));
 
-        MerchantRecipe ironlBoots = new MerchantRecipe(veciNaProdej.ironlBoots(), 1);
+        MerchantRecipe ironlBoots = new MerchantRecipe(veciNaProdej.ironlBoots(), 999);
         ironlBoots.addIngredient(new ItemStack(Material.GOLD_INGOT, 7));
 
-        trader.setRecipes(Lists.newArrayList(enderPearl, wool, endstone, bucketOfPowederSnow, elytra, snowball, lavaBucket, chainmailLeggins, chainmailBoots, ironLeggins, ironlBoots));
+        trader.setRecipes(Lists.newArrayList(enderPearl, wool, endstone, bucketOfPowederSnow, elytra, snowball,
+                lavaBucket, chainmailLeggins, chainmailBoots, ironLeggins, ironlBoots));
 
         return true;
     }

@@ -1,15 +1,11 @@
 package battlebeacons;
 
-import battlebeacons.generatory.IronGenerator;
+import battlebeacons.generatory.Generatory;
 import battlebeacons.listenery.SpravaBloku;
 import battlebeacons.teleporter.TeleportDoAreny;
 import battlebeacons.teleporter.TeleportDoLoby;
 import battlebeacons.tymy.Skore;
 import battlebeacons.tymy.Tymy;
-import org.bukkit.plugin.Plugin;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class StavHry {
@@ -19,22 +15,18 @@ public class StavHry {
     private final SpravaBloku spravaBloku;
     private final TeleportDoAreny teleport;
     private final Skore skore;
-    private final Main main;
-    private final Plugin plugin;
-    public List<IronGenerator> ironGenerators = new ArrayList<>(4);
-
+    private final Generatory generatory;
 
     private boolean gameRunning;
 
-    public StavHry(Tymy tymy, TeleportDoLoby teleportDoLoby, SpravaBloku spravaBloku, TeleportDoAreny teleport, Skore skore, Main main, Plugin plugin) {
+    public StavHry(Tymy tymy, TeleportDoLoby teleportDoLoby, SpravaBloku spravaBloku, TeleportDoAreny teleport, Skore skore, Generatory generatory) {
         this.tymy = tymy;
         this.teleportDoLoby = teleportDoLoby;
         this.spravaBloku = spravaBloku;
         this.teleport = teleport;
         this.skore = skore;
+        this.generatory = generatory;
         this.gameRunning = false;
-        this.main = main;
-        this.plugin = plugin;
     }
 
     public boolean isGameRunning() {
@@ -44,9 +36,8 @@ public class StavHry {
     public void startGame() {
         teleport.teleportPriStartuHry();
         skore.inicializace();
-
+        generatory.loadFromConfig();
         this.gameRunning = true;
-        main.ironGeneratorsLocation.forEach(ironGenerator -> ironGenerators.add(new IronGenerator(plugin).spawnIronGenerator(main.getServer().getWorlds().get(0), ironGenerator)));
     }
 
     public void stopGame() {
@@ -55,6 +46,6 @@ public class StavHry {
         tymy.smazTymy();
         spravaBloku.znicPolozeneBloky();
         spravaBloku.znicOdhozeneVeci();
-        ironGenerators.forEach(ironGenerator -> ironGenerator.destroy());
+        generatory.destroyAll();
     }
 }

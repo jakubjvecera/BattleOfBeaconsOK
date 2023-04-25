@@ -1,6 +1,6 @@
 package battlebeacons.commands;
 
-import battlebeacons.generatory.IronGenerator;
+import battlebeacons.generatory.Generatory;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -10,10 +10,10 @@ import org.bukkit.plugin.Plugin;
 
 public class IronGeneratorCommand implements CommandExecutor {
 
-    private final Plugin plugin;
+    private final Generatory generatory;
 
-    public IronGeneratorCommand(Plugin plugin) {
-        this.plugin = plugin;
+    public IronGeneratorCommand(Generatory generatory) {
+        this.generatory = generatory;
     }
 
     @Override
@@ -22,10 +22,7 @@ public class IronGeneratorCommand implements CommandExecutor {
 
         Player player = (Player) sender;
         Location location = player.getLocation();
-
-        IronGenerator ironGenerator = new IronGenerator(plugin);
-
-        ironGenerator.spawnIronGenerator(location.getWorld(), location);
+        generatory.createIronGenerator(location);
         return true;
     }
 }
