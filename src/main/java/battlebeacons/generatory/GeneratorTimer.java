@@ -36,6 +36,7 @@ public final class GeneratorTimer implements Runnable {
             odpocet = cas;
         } else {
             nameableEntity.setCustomName(jmeno + " " + odpocet);
+            nameableEntity.getLocation().getChunk().load();
             nameableEntity.setCustomNameVisible(true);
             odpocet--;
         }
