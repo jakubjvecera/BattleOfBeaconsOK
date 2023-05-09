@@ -67,7 +67,7 @@ public final class Generatory {
 
     public Generator createNetheriteGenerator(Location location)
     {
-        Generator generator = new Generator("NETHERITE GENERATOR", plugin, Material.EMERALD, location, 90);
+        Generator generator = new Generator("NETHERITE GENERATOR", plugin, Material.NETHERITE_INGOT, location, 90);
         generator.spawn();
         add(generator);
         return generator;
