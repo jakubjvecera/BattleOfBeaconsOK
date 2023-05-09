@@ -38,7 +38,7 @@ public final class Generatory {
         add(createEmeraldGenerator(config.getLocation("emeraldGenerator2Location")));
         add(createEmeraldGenerator(config.getLocation("emeraldGenerator3Location")));
         add(createEmeraldGenerator(config.getLocation("emeraldGenerator4Location")));
-        add(createEmeraldGenerator(config.getLocation("NetheriteGeneratorLocation")));
+        add(createNetheriteGenerator(config.getLocation("NetheriteGeneratorLocation")));
     }
 
     public Generator createGoldGenerator(Location location)
