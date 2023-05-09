@@ -166,3 +166,47 @@ BeaconLocation_4:
   pitch: 0
   yaw: 0
 
+NetheriteGenerator:
+  ==: org.bukkit.Location
+  world: world
+  x: 500
+  y: 101
+  z: 500
+  pitch: 0
+  yaw: 0
+
+emeraldGenerator1Location:
+  ==: org.bukkit.Location
+  world: world
+  x: 508
+  y: 100
+  z: 508
+  pitch: 0
+  yaw: 0
+
+emeraldGenerator2Location:
+  ==: org.bukkit.Location
+  world: world
+  x: 492
+  y: 100
+  z: 492
+  pitch: 0
+  yaw: 0
+
+emeraldGenerator3Location:
+  ==: org.bukkit.Location
+  world: world
+  x: 492
+  y: 100
+  z: 508
+  pitch: 0
+  yaw: 0
+
+emeraldGenerator4Location:
+  ==: org.bukkit.Location
+  world: world
+  x: 508
+  y: 100
+  z: 492
+  pitch: 0
+  yaw: 0

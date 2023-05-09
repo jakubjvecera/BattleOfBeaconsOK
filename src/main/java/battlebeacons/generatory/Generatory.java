@@ -34,6 +34,10 @@ public final class Generatory {
         add(createGoldGenerator(config.getLocation("goldGenerator2Location")));
         add(createGoldGenerator(config.getLocation("goldGenerator3Location")));
         add(createGoldGenerator(config.getLocation("goldGenerator4Location")));
+        add(createEmeraldGenerator(config.getLocation("emeraldGenerator1Location")));
+        add(createEmeraldGenerator(config.getLocation("emeraldGenerator2Location")));
+        add(createEmeraldGenerator(config.getLocation("emeraldGenerator3Location")));
+        add(createEmeraldGenerator(config.getLocation("emeraldGenerator4Location")));
     }
 
     public Generator createGoldGenerator(Location location)
@@ -47,6 +51,14 @@ public final class Generatory {
     public Generator createIronGenerator(Location location)
     {
         Generator generator = new Generator("IRON GENERATOR", plugin, Material.IRON_INGOT, location, 3);
+        generator.spawn();
+        add(generator);
+        return generator;
+    }
+
+    public Generator createEmeraldGenerator(Location location)
+    {
+        Generator generator = new Generator("EMERALD GENERATOR", plugin, Material.EMERALD, location, 50);
         generator.spawn();
         add(generator);
         return generator;
