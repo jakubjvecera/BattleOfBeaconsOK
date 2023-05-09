@@ -44,6 +44,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BlockDropEvent(spravaBloku), this);
         getServer().getPluginManager().registerEvents(new PlayerDropEvent(spravaBloku), this);
 
+
         //commandy
         getCommand("+vytvorTeleportera").setExecutor(new VytvorTeleportera());
         getCommand("+konec").setExecutor(new KonecHry(stavHry, tymy));
