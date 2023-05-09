@@ -166,7 +166,7 @@ BeaconLocation_4:
   pitch: 0
   yaw: 0
 
-NetheriteGenerator:
+NetheriteGeneratorLocation:
   ==: org.bukkit.Location
   world: world
   x: 500

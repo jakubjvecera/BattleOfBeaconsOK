@@ -38,6 +38,7 @@ public final class Generatory {
         add(createEmeraldGenerator(config.getLocation("emeraldGenerator2Location")));
         add(createEmeraldGenerator(config.getLocation("emeraldGenerator3Location")));
         add(createEmeraldGenerator(config.getLocation("emeraldGenerator4Location")));
+        add(createEmeraldGenerator(config.getLocation("NetheriteGeneratorLocation")));
     }
 
     public Generator createGoldGenerator(Location location)
@@ -59,6 +60,14 @@ public final class Generatory {
     public Generator createEmeraldGenerator(Location location)
     {
         Generator generator = new Generator("EMERALD GENERATOR", plugin, Material.EMERALD, location, 50);
+        generator.spawn();
+        add(generator);
+        return generator;
+    }
+
+    public Generator createNetheriteGenerator(Location location)
+    {
+        Generator generator = new Generator("NETHERITE GENERATOR", plugin, Material.EMERALD, location, 90);
         generator.spawn();
         add(generator);
         return generator;
