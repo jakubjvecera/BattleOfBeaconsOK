@@ -25,72 +25,72 @@ LobbyLocationEndCorner:
 ironGenerator1Location:
   ==: org.bukkit.Location
   world: world
-  x: 503
+  x: 503.5
   y: 100
-  z: 574
+  z: 574.5
   pitch: 0
   yaw: 0
 
 ironGenerator2Location:
   ==: org.bukkit.Location
   world: world
-  x: 497
+  x: 497.5
   y: 100
-  z: 426
+  z: 426.5
   pitch: 0
   yaw: 0
 
 ironGenerator3Location:
   ==: org.bukkit.Location
   world: world
-  x: 575
+  x: 575.5
   y: 100
-  z: 497
+  z: 497.5
   pitch: 0
   yaw: 0
 
 ironGenerator4Location:
   ==: org.bukkit.Location
   world: world
-  x: 426
+  x: 426.5
   y: 100
-  z: 503
+  z: 503.5
   pitch: 0
   yaw: 0
 
 goldGenerator1Location:
   ==: org.bukkit.Location
   world: world
-  x: 497
+  x: 497.5
   y: 100
-  z: 574
+  z: 574.5
   pitch: 0
   yaw: 0
 
 goldGenerator2Location:
   ==: org.bukkit.Location
   world: world
-  x: 503
+  x: 503.5
   y: 100
-  z: 426
+  z: 426.5
   pitch: 0
   yaw: 0
 
 goldGenerator3Location:
   ==: org.bukkit.Location
   world: world
-  x: 575
+  x: 575.5
   y: 100
-  z: 503
+  z: 503.5
   pitch: 0
   yaw: 0
 
 goldGenerator4Location:
   ==: org.bukkit.Location
   world: world
-  x: 426
+  x: 426.5
   y: 100
-  z: 497
+  z: 497.5
   pitch: 0
   yaw: 0
 
@@ -169,44 +169,44 @@ BeaconLocation_4:
 NetheriteGeneratorLocation:
   ==: org.bukkit.Location
   world: world
-  x: 500
+  x: 500.5
   y: 101
-  z: 500
+  z: 500.5
   pitch: 0
   yaw: 0
 
 emeraldGenerator1Location:
   ==: org.bukkit.Location
   world: world
-  x: 508
+  x: 508.5
   y: 100
-  z: 508
+  z: 508.5
   pitch: 0
   yaw: 0
 
 emeraldGenerator2Location:
   ==: org.bukkit.Location
   world: world
-  x: 492
+  x: 492.5
   y: 100
-  z: 492
+  z: 492.5
   pitch: 0
   yaw: 0
 
 emeraldGenerator3Location:
   ==: org.bukkit.Location
   world: world
-  x: 492
+  x: 492.5
   y: 100
-  z: 508
+  z: 508.5
   pitch: 0
   yaw: 0
 
 emeraldGenerator4Location:
   ==: org.bukkit.Location
   world: world
-  x: 508
+  x: 508.5
   y: 100
-  z: 492
+  z: 492.5
   pitch: 0
   yaw: 0

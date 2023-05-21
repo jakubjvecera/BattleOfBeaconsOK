@@ -3,7 +3,7 @@ package battlebeacons;
 import battlebeacons.generatory.Generatory;
 import battlebeacons.listenery.SpravaBloku;
 import battlebeacons.teleporter.TeleportDoAreny;
-import battlebeacons.teleporter.TeleportDoLoby;
+import battlebeacons.teleporter.TeleportDoLobby;
 import battlebeacons.tymy.Skore;
 import battlebeacons.tymy.Tymy;
 
@@ -11,7 +11,7 @@ import battlebeacons.tymy.Tymy;
 public class StavHry {
 
     private final Tymy tymy;
-    private final TeleportDoLoby teleportDoLoby;
+    private final TeleportDoLobby teleportDoLoby;
     private final SpravaBloku spravaBloku;
     private final TeleportDoAreny teleport;
     private final Skore skore;
@@ -20,7 +20,7 @@ public class StavHry {
 
     private boolean gameRunning;
 
-    public StavHry(Tymy tymy, TeleportDoLoby teleportDoLoby, SpravaBloku spravaBloku, TeleportDoAreny teleport, Skore skore, Generatory generatory, Main main) {
+    public StavHry(Tymy tymy, TeleportDoLobby teleportDoLoby, SpravaBloku spravaBloku, TeleportDoAreny teleport, Skore skore, Generatory generatory, Main main) {
         this.tymy = tymy;
         this.teleportDoLoby = teleportDoLoby;
         this.spravaBloku = spravaBloku;

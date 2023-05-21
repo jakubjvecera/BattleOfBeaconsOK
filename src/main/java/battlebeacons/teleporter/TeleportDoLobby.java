@@ -5,11 +5,11 @@ import battlebeacons.lobby.Lobby;
 import battlebeacons.tymy.Tymy;
 import org.bukkit.GameMode;
 
-public class TeleportDoLoby {
+public class TeleportDoLobby {
     private final Lobby lobby;
     private final Tymy tymy;
 
-    public TeleportDoLoby(Lobby lobby, Tymy tymy) {
+    public TeleportDoLobby(Lobby lobby, Tymy tymy) {
         this.lobby = lobby;
         this.tymy = tymy;
     }

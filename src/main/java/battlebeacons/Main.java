@@ -9,7 +9,7 @@ import battlebeacons.listenery.*;
 import battlebeacons.lobby.Lobby;
 import battlebeacons.lobby.LobbyCreator;
 import battlebeacons.teleporter.TeleportDoAreny;
-import battlebeacons.teleporter.TeleportDoLoby;
+import battlebeacons.teleporter.TeleportDoLobby;
 import battlebeacons.tymy.Skore;
 import battlebeacons.tymy.Tymy;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -25,7 +25,7 @@ public class Main extends JavaPlugin {
         Lobby lobby = lobbyCreator.createLobby();
         Tymy tymy = new Tymy();
         TeleportDoAreny teleportDoAreny = new TeleportDoAreny(this, lobby, tymy);
-        TeleportDoLoby teleportDoLoby = new TeleportDoLoby(lobby, tymy);
+        TeleportDoLobby teleportDoLoby = new TeleportDoLobby(lobby, tymy);
         Skore skore = new Skore(tymy);
         SpravaBloku spravaBloku = new SpravaBloku();
         Generatory generatory = new Generatory(this);
