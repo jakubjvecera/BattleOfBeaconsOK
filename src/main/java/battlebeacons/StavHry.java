@@ -6,6 +6,7 @@ import battlebeacons.teleporter.TeleportDoAreny;
 import battlebeacons.teleporter.TeleportDoLobby;
 import battlebeacons.tymy.Skore;
 import battlebeacons.tymy.Tymy;
+import org.bukkit.plugin.Plugin;
 
 
 public class StavHry {
@@ -16,18 +17,18 @@ public class StavHry {
     private final TeleportDoAreny teleport;
     private final Skore skore;
     private final Generatory generatory;
-    private final Main main;
+    private final Plugin plugin;
 
     private boolean gameRunning;
 
-    public StavHry(Tymy tymy, TeleportDoLobby teleportDoLoby, SpravaBloku spravaBloku, TeleportDoAreny teleport, Skore skore, Generatory generatory, Main main) {
+    public StavHry(Tymy tymy, TeleportDoLobby teleportDoLoby, SpravaBloku spravaBloku, TeleportDoAreny teleport, Skore skore, Generatory generatory, Main plugin) {
         this.tymy = tymy;
         this.teleportDoLoby = teleportDoLoby;
         this.spravaBloku = spravaBloku;
         this.teleport = teleport;
         this.skore = skore;
         this.generatory = generatory;
-        this.main = main;
+        this.plugin = plugin;
         this.gameRunning = false;
     }
 
@@ -49,7 +50,7 @@ public class StavHry {
         spravaBloku.znicPolozeneBloky();
         spravaBloku.znicOdhozeneVeci();
         generatory.destroyAll();
-        main.getServer().getOnlinePlayers().forEach(player -> player.chat(player.isOp() ? "/kill @e[type=minecraft:armor_stand]" : ""));
-        main.getServer().getOnlinePlayers().forEach(player -> player.chat(player.isOp() ? "/kill @e[type=minecraft:item]" : ""));
+        plugin.getServer().getOnlinePlayers().forEach(player -> player.chat(player.isOp() ? "/kill @e[type=minecraft:armor_stand]" : ""));
+        plugin.getServer().getOnlinePlayers().forEach(player -> player.chat(player.isOp() ? "/kill @e[type=minecraft:item]" : ""));
     }
 }

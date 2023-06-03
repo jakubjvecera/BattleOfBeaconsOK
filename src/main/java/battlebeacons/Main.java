@@ -10,6 +10,7 @@ import battlebeacons.lobby.Lobby;
 import battlebeacons.lobby.LobbyCreator;
 import battlebeacons.teleporter.TeleportDoAreny;
 import battlebeacons.teleporter.TeleportDoLobby;
+import battlebeacons.timelimit.TimeLimit;
 import battlebeacons.tymy.Skore;
 import battlebeacons.tymy.Tymy;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -30,10 +31,11 @@ public class Main extends JavaPlugin {
         SpravaBloku spravaBloku = new SpravaBloku();
         Generatory generatory = new Generatory(this);
         StavHry stavHry = new StavHry(tymy, teleportDoLoby, spravaBloku, teleportDoAreny, skore, generatory, this);
+        TimeLimit timeLimit = new TimeLimit(this, stavHry, tymy);
 
         //listeners
         getServer().getPluginManager().registerEvents(new PripojeniDoLobby(lobby), this);
-        getServer().getPluginManager().registerEvents(new StartHry(stavHry), this);
+        getServer().getPluginManager().registerEvents(new StartHry(stavHry, timeLimit), this);
         getServer().getPluginManager().registerEvents(new OchranaSpoluhrace(tymy, stavHry), this);
         getServer().getPluginManager().registerEvents(new OdpocetZakazPohybu(tymy, teleportDoAreny, stavHry), this);
         getServer().getPluginManager().registerEvents(new RespawnHrace(tymy, stavHry), this);

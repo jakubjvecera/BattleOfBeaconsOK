@@ -101,7 +101,7 @@ TeamBattleLocation_1:
   y: 100
   z: 570
   pitch: 0
-  yaw: 0
+  yaw: -180
 
 BeaconLocation_1:
   ==: org.bukkit.Location
