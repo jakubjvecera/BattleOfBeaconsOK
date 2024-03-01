@@ -38,7 +38,14 @@ public class BlokPolozen implements Listener {
                     tym.zprava("Beacon obnoven", "zivi jsou zachraneni");
                 }
             }
-            case BLACK_WOOL -> spravaBloku.add(blok);
+            case BLACK_WOOL -> polozBlok(blok);
+            case END_STONE -> polozBlok(blok);
+        }
+    }
+
+    private void polozBlok(Block blok) {
+        if (stavHry.isGameRunning()) {
+            spravaBloku.add(blok);
         }
     }
 }

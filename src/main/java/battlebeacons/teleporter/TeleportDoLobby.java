@@ -17,12 +17,12 @@ public class TeleportDoLobby {
     public void teleport() {
         tymy.vratTymy().forEach(tym -> {
             tym.getHraci().forEach(hrac -> {
-                var mistovLoby = lobby.nahodneMistoVLobby();
+                var mistovLobby = lobby.nahodneMistoVLobby();
                 hrac.setGameMode(GameMode.ADVENTURE);
                 hrac.getInventory().clear();
                 hrac.setArrowsInBody(0);
                 hrac.getActivePotionEffects().clear();
-                hrac.teleport(mistovLoby);
+                hrac.teleport(mistovLobby);
             });
         });
     }

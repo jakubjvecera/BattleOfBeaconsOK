@@ -27,17 +27,16 @@ public class Tymy {
         return tymy.get(cislo);
     }
 
-    public Tym vratTym(String jmenoTymu) {
-        return tymy.stream()
-                .filter(tym -> jmenoTymu.equals(tym.getNastaveniTymu().getJmeno()))
-                .findFirst()
-                .get();
-    }
-
-    public Optional<Tym> vratTymPodleMistaBeaconu(Location location) {
-        return tymy.stream()
-                .filter(tym -> location.equals(tym.getBeaconPoint()))
-                .findFirst();
+    private List<Player> zamichej(List<Player> hraci) {
+        Random rand = new Random();
+        for (int i = 0; i < 100; i++) {
+            int prvniIndex = rand.nextInt(hraci.size());
+            int druhyIndex = rand.nextInt(hraci.size());
+            Player player = hraci.get(prvniIndex);
+            hraci.set(prvniIndex, hraci.get(druhyIndex));
+            hraci.set(druhyIndex, player);
+        }
+        return hraci;
     }
 
     public void vytvorTymy(List<Player> hraci, List<Location> spawnPointy, List<Location> beaconPointy) {
@@ -68,17 +67,6 @@ public class Tymy {
         return false;
     }
 
-    private List<Player> zamichej(List<Player> hraci) {
-        Random rand = new Random();
-        for (int i = 0; i < 100; i++) {
-            int prvniIndex = rand.nextInt(hraci.size());
-            int druhyIndex = rand.nextInt(hraci.size());
-            Player player = hraci.get(prvniIndex);
-            hraci.set(prvniIndex, hraci.get(druhyIndex));
-            hraci.set(druhyIndex, player);
-        }
-        return hraci;
-    }
 
     public Tym vratTym(Player player) {
         return
@@ -86,5 +74,18 @@ public class Tymy {
                         .filter(tym -> tym.getHraci().contains(player))
                         .findFirst()
                         .orElseThrow(() -> new IllegalArgumentException("Hrac neexistuje."));
+    }
+
+    public Tym vratTym(String jmenoTymu) {
+        return tymy.stream()
+                .filter(tym -> jmenoTymu.equals(tym.getNastaveniTymu().getJmeno()))
+                .findFirst()
+                .get();
+    }
+
+    public Optional<Tym> vratTymPodleMistaBeaconu(Location location) {
+        return tymy.stream()
+                .filter(tym -> location.equals(tym.getBeaconPoint()))
+                .findFirst();
     }
 }

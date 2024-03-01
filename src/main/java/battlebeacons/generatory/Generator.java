@@ -1,12 +1,13 @@
 package battlebeacons.generatory;
 
+import battlebeacons.listenery.SpravaBloku;
 import org.bukkit.*;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.EntityType;
 import org.bukkit.plugin.Plugin;
 
 class Generator {
-
+    private final SpravaBloku spravaBloku;
     private final String name;
     private final Plugin plugin;
     private final Material material;
@@ -17,7 +18,8 @@ class Generator {
     //non final variables
     private int taskId = 0;
 
-    public Generator(String name, Plugin plugin, Material material, Location location, int cas) {
+    public Generator(SpravaBloku spravaBloku, String name, Plugin plugin, Material material, Location location, int cas) {
+        this.spravaBloku = spravaBloku;
         this.name = name;
         this.plugin = plugin;
         this.material = material;
@@ -38,7 +40,7 @@ class Generator {
     public void startTimer(){
         if (taskId != 0) throw new RuntimeException("Timer pro generator jiz bezi");
         taskId = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin,
-                new GeneratorTimer(material, cas, armorStand.getLocation(), armorStand, name),
+                new GeneratorTimer(spravaBloku, material, cas, armorStand.getLocation(), armorStand, name),
                 0, 20); //20 ticks is one second in spigot
     }
 

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 
 public final class SpravaBloku {
-    public static Set<Material> POVOLENE_BLOKY = Set.of(Material.BLACK_WOOL, Material.BEACON);
+    public static Set<Material> POVOLENE_BLOKY = Set.of(Material.BLACK_WOOL, Material.BEACON, Material.END_STONE);
     private final List<Block> polozeneBloky = new ArrayList<>();
     private final List<Item> odhozeneVeci = new ArrayList<>();
 
@@ -37,5 +37,9 @@ public final class SpravaBloku {
             item.remove();
         }
         odhozeneVeci.clear();
+    }
+
+    public boolean jeBlokPolozenyVeHre(Block blok) {
+        return polozeneBloky.contains(blok);
     }
 }

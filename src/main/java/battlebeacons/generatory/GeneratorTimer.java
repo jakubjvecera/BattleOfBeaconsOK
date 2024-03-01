@@ -1,12 +1,15 @@
 package battlebeacons.generatory;
 
+import battlebeacons.listenery.SpravaBloku;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
 
 public final class GeneratorTimer implements Runnable {
+    private final SpravaBloku spravaBloku;
     private final Material material;
     private final int cas;
     private final Location location;
@@ -17,7 +20,8 @@ public final class GeneratorTimer implements Runnable {
     //non - final variables
     private int odpocet;
 
-    public GeneratorTimer(Material material, int cas, Location location, Entity nameableEntity, String jmeno) {
+    public GeneratorTimer(SpravaBloku spravaBloku, Material material, int cas, Location location, Entity nameableEntity, String jmeno) {
+        this.spravaBloku = spravaBloku;
         this.material = material;
         this.location = location;
         this.world = location.getWorld();
@@ -32,7 +36,8 @@ public final class GeneratorTimer implements Runnable {
     public void run() {
 
         if (odpocet < 0) {
-            world.dropItem(location, new ItemStack(material, 1));
+            Item item = world.dropItem(location, new ItemStack(material, 1));
+            spravaBloku.add(item);
             odpocet = cas;
         } else {
             nameableEntity.setCustomName(jmeno + " " + odpocet);

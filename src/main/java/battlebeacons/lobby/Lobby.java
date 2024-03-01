@@ -22,24 +22,24 @@ public final class Lobby {
         //between x
         var minX = Math.min(roh1.getX(), roh2.getX());
         var maxX = Math.max(roh1.getX(), roh2.getX());
-        if (!between(location.getX(), minX, maxX)) return false;
+        if (!mezi(location.getX(), minX, maxX)) return false;
 
         //between Y
         var minY = Math.min(roh1.getY(), roh2.getY());
         var maxY = Math.max(roh1.getY(), roh2.getY());
-        if (!between(location.getY(), minY, maxY)) return false;
+        if (!mezi(location.getY(), minY, maxY)) return false;
 
         //between Z
         var minZ = Math.min(roh1.getZ(), roh2.getZ());
         var maxZ = Math.max(roh1.getZ(), roh2.getZ());
-        return between(location.getZ(), minZ, maxZ);
+        return mezi(location.getZ(), minZ, maxZ);
 
         //vse v poradku
     }
 
-    private boolean between(double value, double min, double max) {
+    private boolean mezi(double hodnota, double min, double max) {
 
-        return value >= min && value <= max;
+        return hodnota >= min && hodnota <= max;
     }
 
     public Location nahodneMistoVLobby() {
@@ -56,8 +56,7 @@ public final class Lobby {
     }
 
     private boolean stojiNaZemi(Location location) {
-        return location.getBlock().getType() == Material.AIR &&
-                location.clone().add(0, -1, 0).getBlock().getType() != Material.AIR;
+        return location.getBlock().getType() == Material.AIR && location.clone().add(0, -1, 0).getBlock().getType() != Material.AIR;
     }
 
     private double randomPoint(double point1, double point2) {

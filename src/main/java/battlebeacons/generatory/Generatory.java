@@ -1,5 +1,6 @@
 package battlebeacons.generatory;
 
+import battlebeacons.listenery.SpravaBloku;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.plugin.Plugin;
@@ -10,9 +11,11 @@ import java.util.List;
 public final class Generatory {
     private final List<Generator> generatory = new ArrayList<>();
     private final Plugin plugin;
+    private final SpravaBloku spravaBloku;
 
-    public Generatory(Plugin plugin) {
+    public Generatory(Plugin plugin, SpravaBloku spravaBloku) {
         this.plugin = plugin;
+        this.spravaBloku = spravaBloku;
     }
 
     public void add(Generator generator) {
@@ -43,7 +46,7 @@ public final class Generatory {
 
     public Generator createGoldGenerator(Location location)
     {
-        Generator generator = new Generator("GOLD GENERATOR", plugin, Material.GOLD_INGOT, location, 6);
+        Generator generator = new Generator(spravaBloku, "GOLD GENERATOR", plugin, Material.GOLD_INGOT, location, 6);
         generator.spawn();
         add(generator);
         return generator;
@@ -51,7 +54,7 @@ public final class Generatory {
 
     public Generator createIronGenerator(Location location)
     {
-        Generator generator = new Generator("IRON GENERATOR", plugin, Material.IRON_INGOT, location, 3);
+        Generator generator = new Generator(spravaBloku, "IRON GENERATOR", plugin, Material.IRON_INGOT, location, 3);
         generator.spawn();
         add(generator);
         return generator;
@@ -59,7 +62,7 @@ public final class Generatory {
 
     public Generator createEmeraldGenerator(Location location)
     {
-        Generator generator = new Generator("EMERALD GENERATOR", plugin, Material.EMERALD, location, 50);
+        Generator generator = new Generator(spravaBloku, "EMERALD GENERATOR", plugin, Material.EMERALD, location, 50);
         generator.spawn();
         add(generator);
         return generator;
@@ -67,7 +70,7 @@ public final class Generatory {
 
     public Generator createNetheriteGenerator(Location location)
     {
-        Generator generator = new Generator("NETHERITE GENERATOR", plugin, Material.NETHERITE_INGOT, location, 90);
+        Generator generator = new Generator(spravaBloku, "NETHERITE GENERATOR", plugin, Material.NETHERITE_INGOT, location, 90);
         generator.spawn();
         add(generator);
         return generator;

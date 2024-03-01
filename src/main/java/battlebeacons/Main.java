@@ -21,7 +21,7 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         this.saveDefaultConfig();
 
-        //servicy
+        //service
         LobbyCreator lobbyCreator = new LobbyCreator(this);
         Lobby lobby = lobbyCreator.createLobby();
         Tymy tymy = new Tymy();
@@ -29,8 +29,8 @@ public class Main extends JavaPlugin {
         TeleportDoLobby teleportDoLoby = new TeleportDoLobby(lobby, tymy);
         Skore skore = new Skore(tymy);
         SpravaBloku spravaBloku = new SpravaBloku();
-        Generatory generatory = new Generatory(this);
-        StavHry stavHry = new StavHry(tymy, teleportDoLoby, spravaBloku, teleportDoAreny, skore, generatory, this);
+        Generatory generatory = new Generatory(this, spravaBloku);
+        StavHry stavHry = new StavHry(tymy, teleportDoLoby, spravaBloku, teleportDoAreny, skore,generatory, this);
         TimeLimit timeLimit = new TimeLimit(this, stavHry, tymy);
 
         //listeners
@@ -41,13 +41,13 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new RespawnHrace(tymy, stavHry), this);
         getServer().getPluginManager().registerEvents(new SmrtHrace(tymy, skore, stavHry), this);
         getServer().getPluginManager().registerEvents(new BeaconZnicen(tymy, stavHry), this);
-        getServer().getPluginManager().registerEvents(new BlokPoskozen(), this);
+        getServer().getPluginManager().registerEvents(new BlokPoskozen(spravaBloku), this);
         getServer().getPluginManager().registerEvents(new BlokPolozen(tymy, spravaBloku, stavHry), this);
         getServer().getPluginManager().registerEvents(new BlockDropEvent(spravaBloku), this);
         getServer().getPluginManager().registerEvents(new PlayerDropEvent(spravaBloku), this);
 
 
-        //commandy
+        //commands
         getCommand("+vytvorTeleportera").setExecutor(new VytvorTeleportera());
         getCommand("+konec").setExecutor(new KonecHry(stavHry, tymy));
         getCommand("+vytvorTradera").setExecutor(new Trader(new VeciNaProdej()));

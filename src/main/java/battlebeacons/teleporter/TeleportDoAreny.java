@@ -8,6 +8,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
 import java.util.ArrayList;
@@ -41,6 +42,10 @@ public final class TeleportDoAreny {
             Tym tym = tymy.vratTym(i);
             vytvorBeacon(tym);
             for (Player player : tym.getHraci()) {
+
+                player.getInventory().addItem(new ItemStack(Material.BREAD, 64));
+                player.getInventory().addItem(new ItemStack(Material.IRON_AXE));
+
                 player.teleport(tym.getSpawnPoint());
                 player.setBedSpawnLocation(tym.getSpawnPoint());
                 player.setGameMode(GameMode.SURVIVAL);

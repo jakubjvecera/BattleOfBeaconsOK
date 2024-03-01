@@ -13,7 +13,7 @@ public class TimeLimit implements Runnable {
     private final Plugin plugin;
     private final StavHry stavHry;
     private final Tymy tymy;
-    private static Duration GAME_DURATION = Duration.ofMinutes(2); // nastaveni delky hry v minutach
+    private static Duration GAME_DURATION = Duration.ofMinutes(20); // nastaveni delky hry v minutach / zde 2 minuty
 
     public TimeLimit(Plugin plugin, StavHry stavHry, Tymy tymy) {
         this.plugin = plugin;
