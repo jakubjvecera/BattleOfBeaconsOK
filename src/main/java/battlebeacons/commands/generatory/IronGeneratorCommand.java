@@ -1,4 +1,4 @@
-package battlebeacons.commands;
+package battlebeacons.commands.generatory;
 
 import battlebeacons.generatory.Generatory;
 import org.bukkit.Location;
