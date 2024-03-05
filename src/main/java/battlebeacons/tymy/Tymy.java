@@ -45,6 +45,7 @@ public class Tymy {
         if (pocetTymu > NastaveniTymu.values().length) throw new IllegalArgumentException("Prilis mnoho tymu.");
         for (int i = 0; i < pocetTymu; i++) {
             tymy.add(new Tym(NastaveniTymu.values()[i], spawnPointy.get(i), beaconPointy.get(i)));
+
         }
         hraci = zamichej(hraci);
         int i = 0;

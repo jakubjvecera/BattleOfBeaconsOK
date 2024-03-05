@@ -41,8 +41,6 @@ public final class SmrtHrace implements Listener {
 
     private void setDrop(PlayerDeathEvent playerDeathEvent) {
         playerDeathEvent.getDrops().clear();
-        playerDeathEvent.getDrops().add(new ItemStack(Material.NETHERITE_INGOT, 5));
-        playerDeathEvent.getDrops().add(new ItemStack(Material.EMERALD, 5));
         playerDeathEvent.getDrops().add(new ItemStack(Material.GOLD_INGOT, 5));
         playerDeathEvent.getDrops().add(new ItemStack(Material.IRON_INGOT, 5));
     }

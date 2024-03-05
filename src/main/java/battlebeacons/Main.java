@@ -2,7 +2,8 @@ package battlebeacons;
 
 import battlebeacons.commands.KonecHry;
 import battlebeacons.commands.VytvorTeleportera;
-import battlebeacons.commands.trader.Trader;
+import battlebeacons.commands.trader.TraderJidlo;
+import battlebeacons.commands.trader.TraderZbrane;
 import battlebeacons.commands.trader.VeciNaProdej;
 import battlebeacons.generatory.Generatory;
 import battlebeacons.listenery.*;
@@ -42,7 +43,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SmrtHrace(tymy, skore, stavHry), this);
         getServer().getPluginManager().registerEvents(new BeaconZnicen(tymy, stavHry), this);
         getServer().getPluginManager().registerEvents(new BlokPoskozen(spravaBloku), this);
-        getServer().getPluginManager().registerEvents(new BlokPolozen(tymy, spravaBloku, stavHry), this);
+        getServer().getPluginManager().registerEvents(new BlokPolozen(spravaBloku, stavHry), this);
         getServer().getPluginManager().registerEvents(new BlockDropEvent(spravaBloku), this);
         getServer().getPluginManager().registerEvents(new PlayerDropEvent(spravaBloku), this);
 
@@ -50,7 +51,8 @@ public class Main extends JavaPlugin {
         //commands
         getCommand("+vytvorTeleportera").setExecutor(new VytvorTeleportera());
         getCommand("+konec").setExecutor(new KonecHry(stavHry, tymy));
-        getCommand("+vytvorTradera").setExecutor(new Trader(new VeciNaProdej()));
+        getCommand("+vytvorTraderaJidlo").setExecutor(new TraderJidlo(new VeciNaProdej()));
+        getCommand("+vytvorTraderaZbrane").setExecutor(new TraderZbrane(new VeciNaProdej()));
 //        getCommand("+vytvorIronGenerator").setExecutor(new IronGeneratorCommand(generatory));
 //        getCommand("+vytvorGoldGenerator").setExecutor(new GoldGeneratorCommand(generatory));
     }

@@ -23,5 +23,7 @@ public class GoldGeneratorCommand implements CommandExecutor {
         Location location = player.getLocation();
         generatory.createGoldGenerator(location);
         return true;
+
+
     }
 }

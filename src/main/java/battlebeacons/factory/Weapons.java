@@ -28,8 +28,8 @@ public class Weapons {
     }
 
     public ItemStack pickaxe() {
-        var pickaxe = new ItemStack(Material.IRON_AXE, 1);
-        return pickaxe;
+        var axe = new ItemStack(Material.IRON_AXE, 1);
+        return axe;
     }
 
 

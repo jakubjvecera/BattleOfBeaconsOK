@@ -42,10 +42,6 @@ public final class TeleportDoAreny {
             Tym tym = tymy.vratTym(i);
             vytvorBeacon(tym);
             for (Player player : tym.getHraci()) {
-
-                player.getInventory().addItem(new ItemStack(Material.BREAD, 64));
-                player.getInventory().addItem(new ItemStack(Material.IRON_AXE));
-
                 player.teleport(tym.getSpawnPoint());
                 player.setBedSpawnLocation(tym.getSpawnPoint());
                 player.setGameMode(GameMode.SURVIVAL);

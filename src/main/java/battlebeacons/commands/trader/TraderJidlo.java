@@ -7,20 +7,19 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Villager;
 import org.bukkit.entity.WanderingTrader;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.MerchantRecipe;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import javax.management.timer.Timer;
-
-public class Trader implements CommandExecutor {
+public class TraderJidlo implements CommandExecutor {
     private final VeciNaProdej veciNaProdej;
 
-    public static final String JMENO_OBCHODNIKA = "TRADER";
+    public static final String JMENO_OBCHODNIKA = "TRADER JIDLO";
 
-    public Trader(VeciNaProdej veciNaProdej) {
+    public TraderJidlo(VeciNaProdej veciNaProdej) {
         this.veciNaProdej = veciNaProdej;
     }
 
@@ -29,13 +28,21 @@ public class Trader implements CommandExecutor {
         if (!(sender instanceof Player)) return false;
         var player = (Player) sender;
 
-        var trader = (WanderingTrader) player.getWorld().spawnEntity(player.getLocation(), EntityType.WANDERING_TRADER);
+        var trader = (Villager) player.getWorld().spawnEntity(player.getLocation(), EntityType.VILLAGER);
+        trader.setVillagerType(Villager.Type.DESERT);
+        trader.setProfession(Villager.Profession.FARMER);
         trader.setAI(false);
         trader.setCustomName(JMENO_OBCHODNIKA);
         trader.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 1000000000, 999999999, true));
 
         MerchantRecipe enderPearl = new MerchantRecipe(veciNaProdej.enderpearl(), 999);
         enderPearl.addIngredient(new ItemStack(Material.EMERALD, 3));
+
+        MerchantRecipe steak = new MerchantRecipe(veciNaProdej.steak(), 999);
+        steak.addIngredient(new ItemStack(Material.GOLD_INGOT, 10));
+
+        MerchantRecipe jablko = new MerchantRecipe(veciNaProdej.jablko(), 999);
+        jablko.addIngredient(new ItemStack(Material.IRON_INGOT, 2));
 
         MerchantRecipe wool = new MerchantRecipe(veciNaProdej.wool(), 999);
         wool.addIngredient(new ItemStack(Material.IRON_INGOT, 4));
@@ -49,26 +56,23 @@ public class Trader implements CommandExecutor {
         MerchantRecipe elytra = new MerchantRecipe(veciNaProdej.elytra(), 999);
         elytra.addIngredient(new ItemStack(Material.NETHERITE_INGOT, 3));
 
-        MerchantRecipe snowball = new MerchantRecipe(veciNaProdej.snowball(), 999);
-        snowball.addIngredient(new ItemStack(Material.GOLD_INGOT, 2));
-
         MerchantRecipe lavaBucket = new MerchantRecipe(veciNaProdej.lavaBucket(), 999);
         lavaBucket.addIngredient(new ItemStack(Material.GOLD_INGOT, 10));
 
-        MerchantRecipe chainmailLeggins = new MerchantRecipe(veciNaProdej.chainmailLeggins(), 999);
-        chainmailLeggins.addIngredient(new ItemStack(Material.IRON_INGOT, 30));
+        MerchantRecipe chleba = new MerchantRecipe(veciNaProdej.chleba(), 999);
+        chleba.addIngredient(new ItemStack(Material.GOLD_INGOT, 3));
 
-        MerchantRecipe chainmailBoots = new MerchantRecipe(veciNaProdej.chainmailBoots(), 999);
-        chainmailBoots.addIngredient(new ItemStack(Material.IRON_INGOT, 25));
+        MerchantRecipe pickAXE = new MerchantRecipe(veciNaProdej.krumpac(), 999);
+        pickAXE.addIngredient(new ItemStack(Material.IRON_INGOT, 2));
 
-        MerchantRecipe ironLeggins = new MerchantRecipe(veciNaProdej.ironLeggins(), 999);
-        ironLeggins.addIngredient(new ItemStack(Material.GOLD_INGOT, 10));
+        MerchantRecipe stonePickAXE = new MerchantRecipe(veciNaProdej.lepsiKrumpac(), 999);
+        stonePickAXE.addIngredient(new ItemStack(Material.EMERALD, 5));
 
-        MerchantRecipe ironlBoots = new MerchantRecipe(veciNaProdej.ironlBoots(), 999);
-        ironlBoots.addIngredient(new ItemStack(Material.GOLD_INGOT, 7));
+        MerchantRecipe ironPickAXE = new MerchantRecipe(veciNaProdej.ocelovyKrumpac(), 999);
+        ironPickAXE.addIngredient(new ItemStack(Material.NETHERITE_INGOT, 1));
 
-        trader.setRecipes(Lists.newArrayList(enderPearl, wool, endstone, bucketOfPowederSnow, elytra, snowball,
-                lavaBucket, chainmailLeggins, chainmailBoots, ironLeggins, ironlBoots));
+        trader.setRecipes(Lists.newArrayList(jablko, chleba, steak, enderPearl, wool, endstone, bucketOfPowederSnow, elytra,
+                lavaBucket, pickAXE, stonePickAXE, ironPickAXE));
 
         return true;
     }
