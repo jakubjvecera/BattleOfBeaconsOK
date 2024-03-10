@@ -48,7 +48,7 @@ public class TraderJidlo implements CommandExecutor {
         wool.addIngredient(new ItemStack(Material.IRON_INGOT, 4));
 
         MerchantRecipe endstone = new MerchantRecipe(veciNaProdej.endstone(), 999);
-        endstone.addIngredient(new ItemStack(Material.IRON_INGOT, 4));
+        endstone.addIngredient(new ItemStack(Material.GOLD_INGOT, 10));
 
         MerchantRecipe bucketOfPowederSnow = new MerchantRecipe(veciNaProdej.bucketOfPowederSnow(), 999);
         bucketOfPowederSnow.addIngredient(new ItemStack(Material.EMERALD, 3));

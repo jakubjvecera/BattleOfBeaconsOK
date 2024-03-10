@@ -36,33 +36,36 @@ public class TraderZbrane implements CommandExecutor {
         trader.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 1000000000, 999999999, true));
 
         MerchantRecipe chainmailLeggins = new MerchantRecipe(veciNaProdej.chainmailLeggins(), 999);
-        chainmailLeggins.addIngredient(new ItemStack(Material.IRON_INGOT, 20));
+        chainmailLeggins.addIngredient(new ItemStack(Material.IRON_INGOT, 10));
 
         MerchantRecipe chainmailBoots = new MerchantRecipe(veciNaProdej.chainmailBoots(), 999);
-        chainmailBoots.addIngredient(new ItemStack(Material.IRON_INGOT, 20));
+        chainmailBoots.addIngredient(new ItemStack(Material.IRON_INGOT, 10));
 
         MerchantRecipe chainmailChestplate = new MerchantRecipe(veciNaProdej.chainmailChestplate(), 999);
-        chainmailChestplate.addIngredient(new ItemStack(Material.IRON_INGOT, 30));
+        chainmailChestplate.addIngredient(new ItemStack(Material.IRON_INGOT, 15));
 
         MerchantRecipe ironLeggins = new MerchantRecipe(veciNaProdej.ironLeggins(), 999);
-        ironLeggins.addIngredient(new ItemStack(Material.GOLD_INGOT, 30));
+        ironLeggins.addIngredient(new ItemStack(Material.GOLD_INGOT, 15));
 
         MerchantRecipe ironBoots = new MerchantRecipe(veciNaProdej.ironlBoots(), 999);
-        ironBoots.addIngredient(new ItemStack(Material.GOLD_INGOT, 30));
+        ironBoots.addIngredient(new ItemStack(Material.GOLD_INGOT, 15));
 
         MerchantRecipe ironChestplate = new MerchantRecipe(veciNaProdej.ironChestplate(), 999);
-        ironChestplate.addIngredient(new ItemStack(Material.GOLD_INGOT, 40));
+        ironChestplate.addIngredient(new ItemStack(Material.GOLD_INGOT, 20));
 
         MerchantRecipe diaLeggins = new MerchantRecipe(veciNaProdej.diaLeggins(), 999);
-        diaLeggins.addIngredient(new ItemStack(Material.EMERALD, 10));
+        diaLeggins.addIngredient(new ItemStack(Material.EMERALD, 5));
 
         MerchantRecipe diaBoots = new MerchantRecipe(veciNaProdej.diaBoots(), 999);
-        diaBoots.addIngredient(new ItemStack(Material.EMERALD, 10));
+        diaBoots.addIngredient(new ItemStack(Material.EMERALD, 5));
 
         MerchantRecipe diaChestplate = new MerchantRecipe(veciNaProdej.diaChestplate(), 999);
-        diaChestplate.addIngredient(new ItemStack(Material.EMERALD, 15));
+        diaChestplate.addIngredient(new ItemStack(Material.EMERALD, 10));
 
-        trader.setRecipes(Lists.newArrayList(chainmailChestplate, chainmailLeggins, chainmailBoots, ironChestplate,
+        MerchantRecipe mec = new MerchantRecipe(veciNaProdej.mec(), 999);
+        mec.addIngredient(new ItemStack(Material.GOLD_INGOT, 5));
+
+        trader.setRecipes(Lists.newArrayList(mec, chainmailChestplate, chainmailLeggins, chainmailBoots, ironChestplate,
                 ironLeggins, ironBoots, diaChestplate, diaLeggins, diaBoots));
 
         return true;

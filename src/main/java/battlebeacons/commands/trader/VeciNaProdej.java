@@ -1,7 +1,12 @@
 package battlebeacons.commands.trader;
 
 import org.bukkit.Material;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.checkerframework.checker.units.qual.A;
 
 public class VeciNaProdej {
 
@@ -33,6 +38,15 @@ public class VeciNaProdej {
     public ItemStack ocelovyKrumpac() {
         var pickAxe = new ItemStack(Material.IRON_PICKAXE);
         return pickAxe;
+    }
+
+    public ItemStack mec(){
+        var mec = new ItemStack(Material.IRON_SWORD);
+        mec.addEnchantment(Enchantment.DAMAGE_ALL, 2);
+        ItemMeta meta = mec.getItemMeta();
+        AttributeModifier attributeModifier = new AttributeModifier("Damage", 5, AttributeModifier.Operation.ADD_NUMBER);
+        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, attributeModifier);
+        return mec;
     }
 
     public ItemStack enderpearl() {
