@@ -5,7 +5,6 @@ import battlebeacons.factory.ArmorFactory;
 import battlebeacons.factory.Weapons;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -37,7 +36,7 @@ public final class Tym {
         inventory.setItemInOffHand(weapons.shield());
         inventory.addItem(weapons.bow());
         inventory.addItem(weapons.arrow());
-        inventory.addItem(weapons.pickaxe());
+        inventory.addItem(weapons.axe());
     }
     public void pridej(Player player) {
         vybavHrace(player);

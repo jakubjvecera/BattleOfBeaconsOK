@@ -1,12 +1,15 @@
 package battlebeacons.commands.trader;
 
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.checkerframework.checker.units.qual.A;
+import org.bukkit.inventory.meta.PotionMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class VeciNaProdej {
 
@@ -24,31 +27,6 @@ public class VeciNaProdej {
         var rizek = new ItemStack(Material.COOKED_PORKCHOP, 8);
         return rizek;
     }
-
-    public ItemStack krumpac() {
-        var pickAxe = new ItemStack(Material.WOODEN_PICKAXE);
-        return pickAxe;
-    }
-
-    public ItemStack lepsiKrumpac() {
-        var pickAxe = new ItemStack(Material.STONE_PICKAXE);
-        return pickAxe;
-    }
-
-    public ItemStack ocelovyKrumpac() {
-        var pickAxe = new ItemStack(Material.IRON_PICKAXE);
-        return pickAxe;
-    }
-
-    public ItemStack mec(){
-        var mec = new ItemStack(Material.IRON_SWORD);
-        mec.addEnchantment(Enchantment.DAMAGE_ALL, 2);
-        ItemMeta meta = mec.getItemMeta();
-        AttributeModifier attributeModifier = new AttributeModifier("Damage", 5, AttributeModifier.Operation.ADD_NUMBER);
-        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, attributeModifier);
-        return mec;
-    }
-
     public ItemStack enderpearl() {
         var perla = new ItemStack(Material.ENDER_PEARL);
         return perla;
@@ -116,5 +94,100 @@ public class VeciNaProdej {
         return diamondChestplate;
     }
 
+    public ItemStack krumpac() {
+        var pickAxe = new ItemStack(Material.WOODEN_PICKAXE);
+        return pickAxe;
+    }
 
+    public ItemStack lepsiKrumpac() {
+        var pickAxe = new ItemStack(Material.STONE_PICKAXE);
+        return pickAxe;
+    }
+
+    public ItemStack ocelovyKrumpac() {
+        var pickAxe = new ItemStack(Material.IRON_PICKAXE);
+        return pickAxe;
+    }
+
+    public ItemStack zeleznyMec(){
+        var mec = new ItemStack(Material.IRON_SWORD);
+        mec.addEnchantment(Enchantment.DAMAGE_ALL, 1);
+        return mec;
+    }
+
+    public ItemStack diamantovyMec(){
+        var mec = new ItemStack(Material.DIAMOND_SWORD);
+        mec.addEnchantment(Enchantment.DAMAGE_ALL, 2);
+        return mec;
+    }
+    public ItemStack netheritovyMec(){
+        var mec = new ItemStack(Material.NETHERITE_SWORD);
+        mec.addEnchantment(Enchantment.DAMAGE_ALL, 3);
+        return mec;
+    }
+
+    public ItemStack zeleznaSekera() {
+        var axe = new ItemStack(Material.IRON_AXE);
+        return axe;
+    }
+
+    public ItemStack diamantovaSekera() {
+        var axe = new ItemStack(Material.DIAMOND_AXE);
+        return axe;
+    }
+
+    public ItemStack netheritovaSekera() {
+        var axe = new ItemStack(Material.NETHERITE_AXE);
+        return axe;
+    }
+
+    public ItemStack luk() {
+        var luk = new ItemStack(Material.BOW);
+        luk.addEnchantment(Enchantment.ARROW_DAMAGE, 1);
+        return luk;
+    }
+
+    public ItemStack silnyLuk() {
+        var luk = new ItemStack(Material.BOW);
+        luk.addEnchantment(Enchantment.ARROW_DAMAGE, 4);
+        return luk;
+    }
+
+    public ItemStack odhazujiciLuk() {
+        var luk = new ItemStack(Material.BOW);
+        luk.addEnchantment(Enchantment.ARROW_DAMAGE, 2);
+        luk.addEnchantment(Enchantment.ARROW_KNOCKBACK, 2);
+        return luk;
+    }
+
+    public ItemStack nekonecnyLuk() {
+        var luk = new ItemStack(Material.BOW);
+        luk.addEnchantment(Enchantment.ARROW_DAMAGE, 2);
+        luk.addEnchantment(Enchantment.ARROW_INFINITE, 1);
+        return luk;
+    }
+
+    public ItemStack sipy() {
+        var sip = new ItemStack(Material.ARROW, 10);
+        return sip;
+    }
+
+    public ItemStack jedovateSipy() {
+        var sip = new ItemStack(Material.TIPPED_ARROW, 5);
+        PotionMeta meta = (PotionMeta) sip.getItemMeta();
+        meta.setColor(Color.GREEN);
+        meta.addCustomEffect(new PotionEffect(PotionEffectType.POISON, 140,1), true);
+        sip.setItemMeta(meta);
+        return sip;
+    }
+
+    public ItemStack oslepujiciSipy() {
+        var sip = new ItemStack(Material.ARROW, 5);
+        PotionMeta meta = (PotionMeta) sip.getItemMeta();
+        meta.addCustomEffect(new PotionEffect(PotionEffectType.BLINDNESS, 180,1), true);
+        meta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 100,1), true); //motani hlavy
+        meta.setColor(Color.GRAY);
+        sip.setItemMeta(meta);
+        return sip;
+    }
 }
