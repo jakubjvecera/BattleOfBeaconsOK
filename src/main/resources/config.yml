@@ -7,18 +7,18 @@
 LobbyLocationStartCorner:
   ==: org.bukkit.Location
   world: world
-  x: -11
-  y: -21
-  z: -6
+  x: -2
+  y: 1
+  z: -2
   pitch: 0
   yaw: 0
 
 LobbyLocationEndCorner:
   ==: org.bukkit.Location
   world: world
-  x: 60
-  y: 22
-  z: 47
+  x: 1
+  y: 1
+  z: 3
   pitch: 0
   yaw: 0
 

@@ -39,8 +39,7 @@ class Generator {
 
     public void startTimer(){
         if (taskId != 0) throw new RuntimeException("Timer pro generator jiz bezi");
-        taskId = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin,
-                new GeneratorTimer(spravaBloku, material, cas, armorStand.getLocation(), armorStand, name),
+        taskId = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin,new GeneratorTimer(spravaBloku, material, cas, armorStand.getLocation(), armorStand, name),
                 0, 20); //20 ticks is one second in spigot
     }
 

@@ -23,7 +23,7 @@ public final class Generatory {
     }
 
     public void destroyAll() {
-        generatory.forEach(Generator::destroy);
+        generatory.forEach( Generator::destroy);
         generatory.clear();
     }
 

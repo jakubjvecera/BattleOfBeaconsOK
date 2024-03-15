@@ -1,12 +1,10 @@
 package battlebeacons.generatory;
 
-import battlebeacons.generatory.Generatory;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 
 public class IronGeneratorCommand implements CommandExecutor {
 

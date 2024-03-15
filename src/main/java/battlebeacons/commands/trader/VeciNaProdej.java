@@ -182,12 +182,13 @@ public class VeciNaProdej {
     }
 
     public ItemStack oslepujiciSipy() {
-        var sip = new ItemStack(Material.ARROW, 5);
+        var sip = new ItemStack(Material.TIPPED_ARROW, 5);
         PotionMeta meta = (PotionMeta) sip.getItemMeta();
         meta.addCustomEffect(new PotionEffect(PotionEffectType.BLINDNESS, 180,1), true);
         meta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 100,1), true); //motani hlavy
         meta.setColor(Color.GRAY);
-        sip.setItemMeta(meta);
+        ItemMeta itemMeta = (ItemMeta) meta;
+        sip.setItemMeta(itemMeta);
         return sip;
     }
 }

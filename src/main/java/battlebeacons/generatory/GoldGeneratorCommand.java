@@ -1,6 +1,5 @@
 package battlebeacons.generatory;
 
-import battlebeacons.generatory.Generatory;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
